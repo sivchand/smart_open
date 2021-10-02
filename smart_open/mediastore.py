@@ -16,7 +16,7 @@ import smart_open
 
 logger = logging.getLogger(__name__)
 
-SCHEMES = ('mediastore')
+SCHEMES = ['mediastore']
 DEFAULT_PORT = 443
 
 DEFAULT_BUFFER_SIZE = 128 * 1024
@@ -139,8 +139,6 @@ def open_uri(uri_as_str, mode, transport_params):
     parsed_uri, transport_params = _consolidate_params(
         parsed_uri, transport_params)
     kwargs = smart_open.utils.check_kwargs(open, transport_params)
-    print(parsed_uri)
-    print(transport_params)
     return open(parsed_uri['key_id'], mode,
                 object_kwargs=parsed_uri['object_kwargs'], **kwargs)
 
