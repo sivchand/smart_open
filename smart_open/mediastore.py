@@ -278,6 +278,3 @@ class Writer(io.BufferedIOBase):
             self.terminate()
         else:
             self.close()
-
-
-print(open_uri("mediastore://my_host/key", "wb", {}))
